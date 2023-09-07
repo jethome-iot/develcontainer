@@ -3,6 +3,9 @@
 name: JH Development build
 
 on:
+  push:
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
@@ -33,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v4.1.1
         id: build_haos_builder
         with:
-          context: develcontainer
+          context: "{{defaultContext}}:develcontainer"
           file: Dockerfile
           tags: ghcr.io/${{ github.repository_owner }}/develcontainer
           cache-from: ghcr.io/${{ github.repository_owner }}/develcontainer:cache
