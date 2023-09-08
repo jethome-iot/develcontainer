@@ -13,7 +13,7 @@ ARG CMAKE_VERSION=3.27.4
 
 RUN apt update \
       && apt install -y --no-install-recommends \
-      wget build-essential make \
+      wget build-essential make libgpiod-dev libgpiod2 \
       && apt clean \
       && rm -rf /var/lib/apt/lists/*
 
