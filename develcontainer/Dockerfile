@@ -19,8 +19,10 @@ RUN apt update \
 
 
 RUN if [ "${BUILD_ARCH}" = "aarch64" ]; then \
+          echo "Selected aarch64" \
           wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-linux-aarch64.sh --no-check-certificate -O /tmp/cmake-install.sh \
       else \
+          echo "Selected x86_64" \
           wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-linux-x86_64.sh --no-check-certificate -O /tmp/cmake-install.sh \
       fi \
       && chmod u+x /tmp/cmake-install.sh \
