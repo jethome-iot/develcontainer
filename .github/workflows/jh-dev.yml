@@ -38,7 +38,7 @@ jobs:
         with:
           context: "{{defaultContext}}:develcontainer"
           file: Dockerfile
-          tags: ghcr.io/${{ github.repository_owner }}/develcontainer:jammy
+          tags: ghcr.io/${{ github.repository_owner }}/develcontainer:jammy,ghcr.io/${{ github.repository_owner }}/develcontainer:latest
           cache-from: ghcr.io/${{ github.repository_owner }}/develcontainer:cache
           cache-to: ghcr.io/${{ github.repository_owner }}/develcontainer:cache
           platforms: linux/amd64,linux/arm64
