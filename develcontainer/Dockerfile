@@ -8,7 +8,7 @@ ARG GCC_VERSION=10
 
 RUN apt update \
       && apt install -y --no-install-recommends \
-      wget build-essential make libgpiod-dev libgpiod2 gdb gdbserver libusb-dev libusb-1.0-0-dev usbutils git \
+      wget build-essential make libgpiod-dev libgpiod2 gdb gdbserver libusb-dev libusb-1.0-0-dev usbutils git ca-certificates \
       && apt clean \
       && rm -rf /var/lib/apt/lists/*
 
