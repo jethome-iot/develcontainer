@@ -6,9 +6,9 @@ ARG BUILDPLATFORM
 ARG CMAKE_VERSION=3.27.4
 ARG GCC_VERSION=10
 
-RUN apt update \
-      && apt install -y --no-install-recommends \
-      wget build-essential make libgpiod-dev libgpiod2 gdb gdbserver libusb-dev libusb-1.0-0-dev usbutils git ca-certificates \
+RUN apt-get update \
+      && apt-get install -y --no-install-recommends \
+      wget build-essential make libgpiod-dev libgpiod2 gdb gdbserver libusb-dev libusb-1.0-0-dev usbutils git ca-certificates curl libssl-dev \
       && apt clean \
       && rm -rf /var/lib/apt/lists/*
 
